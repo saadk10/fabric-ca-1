@@ -174,6 +174,21 @@ for convenience.  Additional usage information is provided in following sections
 
 The following link shows the Fabric CA server usage message.
 
+:doc:`/servercli.rst`
+
+1
+
+:doc:`servercli.rst`
+
+2
+
+:doc:`servercli`
+
+3
+
+:doc:`/servercli`
+
+
 .. toctree::
    :maxdepth: 2
    :caption: Key Concepts
