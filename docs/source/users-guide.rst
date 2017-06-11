@@ -176,7 +176,13 @@ The following link shows the Fabric CA server usage message.
 
 `ServerCLI </servercli.txt>`_
 
+1
+
+`ServerCLI <../servercli.txt>`_
+
 2
+
+`ServerCLI <servercli.txt>`_
 
 
 Note that command line options that are string slices (lists) can be specified either
