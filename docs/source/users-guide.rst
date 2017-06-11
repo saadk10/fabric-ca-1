@@ -174,11 +174,9 @@ for convenience.  Additional usage information is provided in following sections
 
 The following link shows the Fabric CA server usage message.
 
-:doc:`servercli.txt`
+`ServerCLI </servercli.txt>`_
 
-1
-
-:doc:`/servercli.txt`
+2
 
 
 Note that command line options that are string slices (lists) can be specified either
