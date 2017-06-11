@@ -25,8 +25,7 @@
 #   - clean - cleans the build area
 
 PROJECT_NAME   = fabric-ca
-BASE_VERSION   = 1.0.0-rc1
-PREV_VERSION   = 1.0.0-beta
+BASE_VERSION   = 1.0.0-alpha3
 IS_RELEASE     = false
 
 ifneq ($(IS_RELEASE),true)
@@ -64,9 +63,6 @@ docker: $(patsubst %,build/image/%/$(DUMMY), $(IMAGES))
 
 docker-fvt: $(patsubst %,build/image/%/$(DUMMY), $(FVTIMAGE))
 
-changelog:
-	./scripts/changelog.sh v$(PREV_VERSION) HEAD v$(BASE_VERSION)
-
 checks: license vet lint format imports
 
 license: .FORCE
@@ -83,6 +79,9 @@ lint: .FORCE
 
 vet: .FORCE
 	@scripts/check_vet
+
+doc: .FORCE
+	@scripts/doc
 
 fabric-ca-client: bin/fabric-ca-client
 fabric-ca-server: bin/fabric-ca-server

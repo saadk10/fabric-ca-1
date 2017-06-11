@@ -1,0 +1,40 @@
+#!/bin/bash
+
+echo "Making docs..."
+pwd
+docsdir=$GOPATH/src/github.com/hyperledger/fabric-ca/docs/source 
+cd $docsdir
+pwd
+fabric-ca-server > servercli.rst
+fabric-ca-client > clientcli.rst
+rm -rf *.yaml *.db *.pem msp/
+export FABRIC_CA_HOME=$docsdir
+fabric-ca-server start -b abc:d &
+sleep 1
+fabric-ca-client enroll -u http://abc:d@localhost:7054
+pkill -9 fabric-ca-server
+hostname=
+sed -e 's/cn:.*/cn: <<<ENROLLMENT_ID>>>/' -e 's/.*".com"/   - <<<MYHOST>>>/' -e 's/url:.*/url: <<<URL>>>/' fabric-ca-client-config.yaml > client-config.yaml
+sed -e 's/cn:.*/cn: <<<COMMONNAME>>>/' -e 's/.*".com"/   - <<<MYHOST>>>/' -e 's/pathlength:.*/pathlength: <<<PATHLENGTH>>>/' -e 's/abc/<<<ADMIN>>>/' -e 's/pass:.*/pass: <<<ADMINPW>>>/' -e 's/'"$HOSTNAME"'/<<<MYHOST>>>/' fabric-ca-server-config.yaml > server-config.yaml
+rm -rf *.db *.pem msp/ fabric-ca-*.yaml
+
+
+# FCA=$GOPATH/src/github.com/hyperledger/fabric-ca
+
+# echo "Running all tests ..."
+# {
+# export PATH=$PATH:$GOPATH/bin
+
+# go get github.com/axw/gocov/...
+# go get github.com/AlekSi/gocov-xml
+
+# PKGS=`go list github.com/hyperledger/fabric-ca/... | grep -Ev '/vendor/|/api|/dbutil|/ldap|/mocks'`
+
+# gocov test $PKGS | gocov-xml > coverage.xml
+
+# } 2>&1 | tee /tmp/test.results
+# echo "Finished running all tests"
+
+# $FCA/scripts/check_test_results /tmp/test.results
+
+# exit $?

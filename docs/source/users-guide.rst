@@ -172,7 +172,9 @@ Explore the Fabric CA CLI
 This section simply provides the usage messages for the Fabric CA server and client
 for convenience.  Additional usage information is provided in following sections.
 
-The following shows the Fabric CA server usage message.
+The following link shows the Fabric CA server usage message.
+
+:doc:`servercli.rst` 
 
 ::
 
@@ -981,19 +983,6 @@ The following sample may be added to the Fabric CA server configuration file in
 order to connect to a MySQL database. Be sure to customize the various
 values appropriately.
 
-On MySQL 5.7.X, certain modes affect whether the server permits '0000-00-00' as a valid date.
-It might be necessary to relax the modes that MySQL server uses. We want to allow
-the server to be able to accept zero date values.
-
-In my.cnf, find the configuration option *sql_mode* and remove *NO_ZERO_DATE* if present.
-Restart MySQL server after making this change.
-
-Please refer to the following MySQL documentation on different modes available
-and select the appropriate settings for the specific version of MySQL that is
-being used.
-
-https://dev.mysql.com/doc/refman/5.7/en/sql-mode.html
-
 ::
 
     db:
@@ -1558,6 +1547,16 @@ https://www.postgresql.org/docs/9.4/static/libpq-ssl.html
 
 MySQL SSL Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~
+
+On MySQL 5.7.X, certain modes affect whether the server permits '0000-00-00' as a valid date.
+It might be necessary to relax the modes that MySQL server uses. We want to allow
+the server to be able to accept zero date values.
+
+Please refer to the following MySQL documentation on different modes available
+and select the appropriate settings for the specific version of MySQL that is
+being used.
+
+https://dev.mysql.com/doc/refman/5.7/en/sql-mode.html
 
 **Basic instructions for configuring SSL on MySQL server:**
 
