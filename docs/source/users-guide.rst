@@ -174,27 +174,12 @@ for convenience.  Additional usage information is provided in following sections
 
 The following link shows the Fabric CA server usage message.
 
-:doc:`/servercli.rst`
+:doc:`servercli.txt`
 
 1
 
-:doc:`servercli.rst`
+:doc:`/servercli.txt`
 
-2
-
-:doc:`servercli`
-
-3
-
-:doc:`/servercli`
-
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Key Concepts
-
-   servercli
-   clientcli
 
 Note that command line options that are string slices (lists) can be specified either
 by specifying the option with comma-separated list elements or by specifying the option
