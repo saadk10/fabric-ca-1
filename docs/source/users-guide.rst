@@ -190,7 +190,15 @@ See :download:`Server CLI <../servercli.txt>`
 
 4
 
-See :download:`Client CLI <../sclientcli.txt>`
+See :download:`Client CLI <../clientcli.rst>`
+
+5
+
+See :download:`Client CLI <servercli.txt>`
+
+6
+
+See :download:`Client CLI <clientcli.rst>`
 
 
 Note that command line options that are string slices (lists) can be specified either
