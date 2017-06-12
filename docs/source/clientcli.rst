@@ -1,6 +1,5 @@
 ::
 
-<<<<<<< HEAD
     Hyperledger Fabric Certificate Authority Client
     
     Usage:
@@ -78,4 +77,3 @@
     -u, --url string                   URL of fabric-ca-server (default "http://localhost:7054")
 
   Use "fabric-ca-client [command] --help" for more information about a command.
->>>>>>> 604df21ac632029038e772b2c8d3add62aca79bc
