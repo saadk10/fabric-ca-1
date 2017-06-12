@@ -1,6 +1,6 @@
 ::
 
-  Hyperledger Fabric Certificate Authority Client
+  Test - Hyperledger Fabric Certificate Authority Client
 
   Usage:
     fabric-ca-client [command]
