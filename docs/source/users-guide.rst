@@ -174,7 +174,7 @@ for convenience.  Additional usage information is provided in following sections
 
 The following link shows the Fabric CA server usage message.
 
-`ServerCLI </servercli.txt>`_
+`ServerCLI <https://github.com/saadk10/fabric-ca-1/blob/master/docs/source/servercli.txt>`_
 
 1
 
