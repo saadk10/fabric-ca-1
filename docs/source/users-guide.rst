@@ -200,6 +200,10 @@ See :download:`Client CLI <servercli.txt>`
 
 See :download:`Client CLI <clientcli.rst>`
 
+7
+
+.. include:: servercli.rst
+
 
 Note that command line options that are string slices (lists) can be specified either
 by specifying the option with comma-separated list elements or by specifying the option
