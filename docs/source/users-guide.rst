@@ -184,7 +184,7 @@ The following link shows the Fabric CA server usage message.
 
 `ServerCLI <servercli.txt>`_
 
-`ServerCLI <clientcli.rst>`_
+`ClientCLI <clientcli.rst>`_
 
 3
 
@@ -203,6 +203,12 @@ See :download:`Client CLI <servercli.txt>`
 See :download:`Client CLI <clientcli.rst>`
 
 7
+
+See client :doc:`clientcli`
+
+8
+
+See server :doc:`servercli`
 
 .. include:: servercli.rst
 
