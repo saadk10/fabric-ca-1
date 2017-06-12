@@ -2,21 +2,32 @@
 
 echo "Making docs..."
 pwd
-docsdir=$GOPATH/src/github.com/hyperledger/fabric-ca/docs/source 
+docsdir=$GOPATH/src/github.com/hyperledger/fabric-ca-1/docs/source 
 cd $docsdir
 pwd
-fabric-ca-server > servercli.rst
-fabric-ca-client > clientcli.rst
+echo -e "::\n" > servercli.rst
+echo -e "::\n" > clientcli.rst
+fabric-ca-server > servercli_temp.rst
+fabric-ca-client > clientcli_temp.rst
+sed -i -e 's/^/    /' servercli_temp.rst
+sed -i -e 's/^/    /' clientcli_temp.rst
+cat servercli_temp.rst >> servercli.rst
+cat clientcli_temp.rst >> clientcli.rst
 rm -rf *.yaml *.db *.pem msp/
 export FABRIC_CA_HOME=$docsdir
 fabric-ca-server start -b abc:d &
 sleep 1
 fabric-ca-client enroll -u http://abc:d@localhost:7054
 pkill -9 fabric-ca-server
-hostname=
+echo -e "::\n" > server_config.rst
+echo -e "::\n" > client_config.rst
 sed -e 's/cn:.*/cn: <<<ENROLLMENT_ID>>>/' -e 's/.*".com"/   - <<<MYHOST>>>/' -e 's/url:.*/url: <<<URL>>>/' fabric-ca-client-config.yaml > client-config.yaml
 sed -e 's/cn:.*/cn: <<<COMMONNAME>>>/' -e 's/.*".com"/   - <<<MYHOST>>>/' -e 's/pathlength:.*/pathlength: <<<PATHLENGTH>>>/' -e 's/abc/<<<ADMIN>>>/' -e 's/pass:.*/pass: <<<ADMINPW>>>/' -e 's/'"$HOSTNAME"'/<<<MYHOST>>>/' fabric-ca-server-config.yaml > server-config.yaml
-rm -rf *.db *.pem msp/ fabric-ca-*.yaml
+sed -e 's/^/    /' fabric-ca-server-config.yaml > fabric-ca-server-config_temp.yaml
+sed -e 's/^/    /' fabric-ca-client-config.yaml > fabric-ca-client-config_temp.yaml
+cat fabric-ca-server-config_temp.yaml >> server_config.rst
+cat fabric-ca-client-config_temp.yaml >> client_config.rst
+rm -rf *.db *.pem msp/ *.yaml *_temp.rst*
 
 
 # FCA=$GOPATH/src/github.com/hyperledger/fabric-ca

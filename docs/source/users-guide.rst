@@ -174,7 +174,13 @@ for convenience.  Additional usage information is provided in following sections
 
 The following link shows the Fabric CA server usage message.
 
-:doc:`servercli.rst` 
+See client :doc:`clientcli`
+
+See server :doc:`servercli`
+
+See clientyaml :doc:`client_config`
+
+See serveryaml :doc:`server_config`
 
 ::
 
