@@ -184,6 +184,14 @@ The following link shows the Fabric CA server usage message.
 
 `ServerCLI <servercli.txt>`_
 
+3
+
+See :download:`Server CLI <../servercli.txt>`
+
+4
+
+See :download:`Client CLI <../sclientcli.txt>`
+
 
 Note that command line options that are string slices (lists) can be specified either
 by specifying the option with comma-separated list elements or by specifying the option
